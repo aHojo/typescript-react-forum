@@ -7,11 +7,14 @@ import { BrowserRouter } from "react-router-dom";
 // Redux setup.
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 ReactDOM.render(
     <Provider store={configureStore()} >
         <BrowserRouter>
-            <App />
+            <ErrorBoundary>
+                {[<App key="App"/>]}
+            </ErrorBoundary>
         </BrowserRouter>
     </Provider>,
   document.getElementById('root')

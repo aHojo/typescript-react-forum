@@ -1,4 +1,4 @@
-const userReducer = (state: any, action: any) => {
+const UserReducer = (state: any, action: any) => {
 
     switch (action.type) {
         case "userName":
@@ -11,10 +11,12 @@ const userReducer = (state: any, action: any) => {
             return {...state, email: action.payload}
         case "resultMsg":
             return { ...state, resultMsg: action.payload };
+        case "isSubmitDisabled":
+            return { ...state, isSubmitDisabled: action.payload}
         default:
             return {...state, resultMsg: "A failure has occurred"}
 
     }
 }
 
-export default userReducer;
+export default UserReducer;

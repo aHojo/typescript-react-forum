@@ -29,7 +29,7 @@ const Nav = () => {
     }
 
     return (
-        <nav className="navigation">
+        <nav>
             <ReactModal isOpen={showMenu} className="modal-menu" onRequestClose={onRequestClose} shouldCloseOnOverlayClick={true}>
                 <SideBarMenus />
             </ReactModal>

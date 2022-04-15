@@ -1,24 +1,22 @@
 import React, {useReducer, useState} from "react";
 import ReactModal from "react-modal";
-import userReducer from "../../common/UserReducer";
+
 import {isPasswordValid, PasswordTestResult} from "../../common/validators/PasswordValidator";
 import "./Registration.css";
+import {ModalProps} from "../types/ModalProps";
+import UserReducer from "./common/UserReducer";
+import {allowSubmit} from "./common/Helper";
 
-export interface RegistrationProps {
-    isOpen: boolean;
-    onClickToggle: (e: React.MouseEvent<Element, MouseEvent> | React.
-        KeyboardEvent<Element>) => void
-}
-const Registration = ({isOpen, onClickToggle}: RegistrationProps) => {
-    const [isRegisterDisabled, setRegisterDisabled] = useState(true);
+const Registration = ({isOpen, onClickToggle}: ModalProps) => {
 
     const [{
         userName,
         password,
         email,
         passwordConfirm,
-        resultMsg
-    }, dispatch] = useReducer(userReducer, {
+        resultMsg,
+        isSubmitDisabled
+    }, dispatch] = useReducer(UserReducer, {
         userName: "davec",
         password: "",
         email: "admin@dzhaven.com",
@@ -28,8 +26,9 @@ const Registration = ({isOpen, onClickToggle}: RegistrationProps) => {
     });
 
     const allowRegister = (msg: string, setDisabled: boolean) => {
-        setRegisterDisabled(setDisabled);
-        dispatch({payload: msg, type: "resultMsg"})
+        // setRegisterDisabled(setDisabled);
+        // dispatch({payload: msg, type: "resultMsg"})
+        allowSubmit(dispatch, msg, setDisabled);
     }
 
     const onChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -131,7 +130,7 @@ const Registration = ({isOpen, onClickToggle}: RegistrationProps) => {
                         <button
                             style={{ marginLeft: ".5em" }}
                             className="action-btn"
-                            disabled={isRegisterDisabled}
+                            disabled={isSubmitDisabled}
                             onClick={onClickRegister}
                         >
                             Register

@@ -46,3 +46,12 @@
     grid-area: rightmenu;
     background-color: coral;
 }
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+    .home-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "nav"
+      "content";
+    }
+}

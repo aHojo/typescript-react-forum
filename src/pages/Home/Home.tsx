@@ -4,7 +4,7 @@ import "./Home.css";
 import Nav from "../../components/Nav/Nav";
 import LeftMenu from "../../components/LeftMenu/LeftMenu";
 import Main from "../../components/Main/Main";
-import RightMenu from "../../components/RightMenu";
+import RightMenu from "../../components/RightMenu/RightMenu";
 import Sidebar from "../../components/SideBar/Sidebar";
 const Home = () => {
     return (

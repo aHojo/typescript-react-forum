@@ -1,5 +1,6 @@
 import Category from "../models/Category";
 import Thread from "../models/Thread";
+import CategoryThread from "../models/CategoryThread";
 // import CategoryThread from "../models/CategoryThread";
 // import Thread from "../models/Thread";
 
@@ -86,65 +87,65 @@ export async function getThreadsByCategory(
     });
     return promise;
 }
-//
-// export async function getTopCategories(): Promise<Array<CategoryThread>> {
-//     const promise = new Promise<Array<CategoryThread>>((res, rej) => {
-//         setTimeout(() => {
-//             const topCategories = [];
-//             const js = new CategoryThread(
-//                 "1",
-//                 "Programming",
-//                 "How can I learn JavaScript"
-//             );
-//             topCategories.push(js);
-//             const node = new CategoryThread(
-//                 "2",
-//                 "Programming",
-//                 "How can I learn Node"
-//             );
-//             topCategories.push(node);
-//             const react = new CategoryThread(
-//                 "3",
-//                 "Programming",
-//                 "How can I learn React"
-//             );
-//             topCategories.push(react);
-//             const french = new CategoryThread(
-//                 "4",
-//                 "Cooking",
-//                 "How do I learn French cuisine?"
-//             );
-//             topCategories.push(french);
-//             const italian = new CategoryThread(
-//                 "5",
-//                 "Cooking",
-//                 "How do I learn Italian cuisine?"
-//             );
-//             topCategories.push(italian);
-//             const soccer = new CategoryThread(
-//                 "6",
-//                 "Sports",
-//                 "How can I learn to play Soccer"
-//             );
-//             topCategories.push(soccer);
-//             const basketball = new CategoryThread(
-//                 "7",
-//                 "Sports",
-//                 "How can I learn to play Basketball"
-//             );
-//             topCategories.push(basketball);
-//             const baseball = new CategoryThread(
-//                 "8",
-//                 "Sports",
-//                 "How can I learn to play Baseball"
-//             );
-//             topCategories.push(baseball);
-//
-//             res(topCategories);
-//         }, 2000);
-//     });
-//     return promise;
-// }
+
+export async function getTopCategories(): Promise<Array<CategoryThread>> {
+    const promise = new Promise<Array<CategoryThread>>((res, rej) => {
+        setTimeout(() => {
+            const topCategories = [];
+            const js = new CategoryThread(
+                "1",
+                "Programming",
+                "How can I learn JavaScript"
+            );
+            topCategories.push(js);
+            const node = new CategoryThread(
+                "2",
+                "Programming",
+                "How can I learn Node"
+            );
+            topCategories.push(node);
+            const react = new CategoryThread(
+                "3",
+                "Programming",
+                "How can I learn React"
+            );
+            topCategories.push(react);
+            const french = new CategoryThread(
+                "4",
+                "Cooking",
+                "How do I learn French cuisine?"
+            );
+            topCategories.push(french);
+            const italian = new CategoryThread(
+                "5",
+                "Cooking",
+                "How do I learn Italian cuisine?"
+            );
+            topCategories.push(italian);
+            const soccer = new CategoryThread(
+                "6",
+                "Sports",
+                "How can I learn to play Soccer"
+            );
+            topCategories.push(soccer);
+            const basketball = new CategoryThread(
+                "7",
+                "Sports",
+                "How can I learn to play Basketball"
+            );
+            topCategories.push(basketball);
+            const baseball = new CategoryThread(
+                "8",
+                "Sports",
+                "How can I learn to play Baseball"
+            );
+            topCategories.push(baseball);
+
+            res(topCategories);
+        }, 2000);
+    });
+    return promise;
+}
 //
 // export async function getThreadById(Id: string): Promise<Thread> {
 //     const promise = new Promise<Thread>((res, rej) => {
